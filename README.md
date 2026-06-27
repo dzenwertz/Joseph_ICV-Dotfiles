@@ -1,8 +1,8 @@
-# Joseph's Dotfiles (Catppuccin Mocha) ✨
+# Joseph's Dotfiles (Catppuccin Mocha) 
 
 Configuración de entorno de escritorio minimalista para **CachyOS / Arch Linux**.
 
-## 🚀 Instalación rápida (Un solo comando)
+## Instalación rápida (Un solo comando)
 
 Ejecuta este comando en la terminal para instalar todo automáticamente:
 
