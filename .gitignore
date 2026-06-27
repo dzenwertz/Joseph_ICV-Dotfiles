@@ -1,0 +1,9 @@
+# Archivos temporales y respaldos
+*.bak
+*~
+*.swp
+.DS_Store
+
+# Archivos de caché y logs locales
+.cache/
+*.log

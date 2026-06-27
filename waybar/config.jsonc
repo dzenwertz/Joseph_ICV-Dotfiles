@@ -1,0 +1,151 @@
+// Waybar Configuration - Minimalist Catppuccin Mocha
+{
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+    "spacing": 4,
+    "margin-top": 4,
+    "margin-left": 12,
+    "margin-right": 12,
+
+    // Choose the order of modules
+    "modules-left": [
+        "hyprland/workspaces",
+        "group/launchers"
+    ],
+    "modules-center": [
+        "wlr/taskbar"
+    ],
+    "modules-right": [
+        "group/status",
+        "group/hardware",
+        "clock",
+        "tray",
+        "custom/power"
+    ],
+
+    // Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
+    },
+
+    "hyprland/window": {
+        "format": " {title} ",
+        "max-length": 40,
+        "separate-outputs": true
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "clock": {
+        "timezone": "auto",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "  {:%H:%M  󰃭  %d/%m}",
+        "format-alt": "  {:%H:%M:%S  󰃭  %Y-%m-%d}"
+    },
+
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": true,
+        "interval": 2
+    },
+
+    "memory": {
+        "format": "  {used:0.1f}G/{total:0.1f}G",
+        "tooltip": true,
+        "interval": 2
+    },
+
+    "network": {
+        "format-wifi": "   {essid} ({signalStrength}%)",
+        "format-ethernet": "󰈀   {ipaddr}",
+        "format-disconnected": "󰖪   Desconectado",
+        "tooltip-format": "Interfaz: {ifname}\nIP: {ipaddr}/{cidr}\nPuerta de enlace: {gwaddr}",
+        "on-click": "kitty -e nmtui"
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰝟  Silenciado",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/power": {
+        "format": "⏻ ",
+        "tooltip": false,
+        "on-click": "/home/joseph/.local/bin/powermenu.sh"
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 20,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "all-outputs": true
+    },
+
+    "custom/launch-kitty": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "kitty"
+    },
+
+    "custom/launch-dolphin": {
+        "format": "󰉋 ",
+        "tooltip": false,
+        "on-click": "dolphin"
+    },
+
+    "custom/launch-browser": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "brave || firefox || chromium"
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}   {capacity}%",
+        "format-charging": "   {capacity}%",
+        "format-plugged": "   {capacity}%",
+        "format-alt": "{icon}   {time}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "group/launchers": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/launch-kitty",
+            "custom/launch-dolphin",
+            "custom/launch-browser"
+        ]
+    },
+
+    "group/status": {
+        "orientation": "horizontal",
+        "modules": ["network", "pulseaudio", "battery"]
+    },
+
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": ["cpu", "memory"]
+    }
+}

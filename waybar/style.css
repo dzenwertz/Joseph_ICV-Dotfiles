@@ -1,0 +1,225 @@
+/* Waybar CSS Style - Catppuccin Mocha Theme
+   Minimalist, floating bar style */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    border: none;
+    color: #cdd6f4;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Workspaces Module */
+#workspaces {
+    background-color: rgba(30, 30, 46, 0.85);
+    border: 1px solid rgba(180, 190, 254, 0.15);
+    border-radius: 8px;
+    margin: 4px;
+    padding: 2px 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #a6adc8; /* Subtext */
+    background-color: transparent;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+    color: #f5e0dc; /* Rosewater */
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#workspaces button.active {
+    color: #1e1e2e; /* Base */
+    background-color: #cba6f7; /* Mauve */
+    box-shadow: 0 0 5px #cba6f7;
+}
+
+#workspaces button.urgent {
+    color: #1e1e2e;
+    background-color: #f38ba8; /* Red */
+}
+
+/* Individual Module Styles & Group Container Styles */
+#clock,
+#tray,
+#launchers,
+#status,
+#hardware {
+    background-color: rgba(30, 30, 46, 0.85);
+    border: 1px solid rgba(180, 190, 254, 0.15);
+    border-radius: 8px;
+    padding: 0 12px;
+    margin: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Window module special color */
+#window {
+    color: #cba6f7; /* Mauve */
+    background-color: transparent; /* Seamless floating text */
+}
+
+/* Right-side modules color highlights */
+#network {
+    color: #89b4fa; /* Blue */
+}
+
+#network.disconnected {
+    color: #f38ba8; /* Red */
+}
+
+#cpu {
+    color: #a6e3a1; /* Green */
+}
+
+#memory {
+    color: #f9e2af; /* Yellow */
+}
+
+#pulseaudio {
+    color: #eba0ac; /* Maroon */
+}
+
+#pulseaudio.muted {
+    color: #6c7086; /* Overlay */
+}
+
+#battery {
+    color: #f9e2af; /* Yellow */
+}
+
+#battery.charging, #battery.plugged {
+    color: #a6e3a1; /* Green */
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8; /* Red */
+}
+
+#clock {
+    color: #cdd6f4; /* Text */
+}
+
+#tray {
+    padding: 0 8px;
+}
+
+/* Inner modules inside group pills (Launchers, Status, Hardware) */
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#battery {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 8px;
+    box-shadow: none;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #f38ba8;
+}
+
+/* Power Button Styling */
+#custom-power {
+    color: #f38ba8; /* Red */
+    background-color: rgba(243, 139, 168, 0.15);
+    border: 1px solid rgba(243, 139, 168, 0.3);
+    border-radius: 8px;
+    padding: 0 14px;
+    margin: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#custom-power:hover {
+    color: #1e1e2e;
+    background-color: #f38ba8;
+    box-shadow: 0 0 8px #f38ba8;
+}
+
+/* Dynamic Taskbar Styling */
+#taskbar {
+    background-color: rgba(30, 30, 46, 0.85);
+    border: 1px solid rgba(180, 190, 254, 0.15);
+    border-radius: 8px;
+    padding: 0 4px;
+    margin: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#taskbar button {
+    background: transparent;
+    color: #cdd6f4;
+    padding: 0 6px;
+    margin: 2px 4px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#taskbar button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+#taskbar button.active {
+    background-color: rgba(180, 190, 254, 0.25); /* Lavender overlay */
+    border-bottom: 2px solid #b4befe; /* Lavender indicator */
+}
+
+#taskbar button.minimized {
+    opacity: 0.55;
+}
+
+/* Pinned Launcher Buttons Styling */
+#custom-launch-kitty,
+#custom-launch-dolphin,
+#custom-launch-browser {
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    padding: 0 10px;
+    margin: 2px 0px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+#custom-launch-kitty {
+    color: #f5e0dc; /* Rosewater */
+}
+
+#custom-launch-dolphin {
+    color: #89b4fa; /* Blue */
+}
+
+#custom-launch-browser {
+    color: #a6e3a1; /* Green */
+}
+
+#custom-launch-kitty:hover,
+#custom-launch-dolphin:hover,
+#custom-launch-browser:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
