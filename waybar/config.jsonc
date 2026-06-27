@@ -87,7 +87,7 @@
     "custom/power": {
         "format": "⏻ ",
         "tooltip": false,
-        "on-click": "/home/joseph/.local/bin/powermenu.sh"
+        "on-click": "~/.local/bin/powermenu.sh"
     },
 
     "wlr/taskbar": {

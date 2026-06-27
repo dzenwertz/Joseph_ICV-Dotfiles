@@ -9,7 +9,7 @@ seleccion=$(echo -e "$opciones" | rofi -dmenu -p "󰨇 Escritorio" -config "$HOM
 
 case "$seleccion" in
     *Fondo)
-        /home/joseph/.local/bin/wallpaper_selector.sh
+        ~/.local/bin/wallpaper_selector.sh
         ;;
     *Terminal)
         kitty &
@@ -21,6 +21,6 @@ case "$seleccion" in
         kitty -e nvim "$HOME/.config/hypr/hyprland.conf" &
         ;;
     *Apagar*)
-        /home/joseph/.local/bin/powermenu.sh
+        ~/.local/bin/powermenu.sh
         ;;
 esac

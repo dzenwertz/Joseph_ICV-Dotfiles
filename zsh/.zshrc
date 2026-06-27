@@ -70,7 +70,7 @@ alias yayup="yay -Sua"
 
 # University & Note Taking (Markdown)
 alias uni="cd ~/Universidad 2>/dev/null || cd ~"
-alias apunte="bash cyber_helper.sh --note" # Calls our note helper
+alias apunte="cyber_helper.sh --note" # Calls our note helper
 alias notas="ls ~/Universidad/*/*.md 2>/dev/null"
 
 # Cybersecurity & Networking Aliases
@@ -86,10 +86,10 @@ alias nmap-vuln="nmap --script vuln -p-"                 # Vulnerability scanner
 alias nmap-ping="nmap -sn"                               # Ping sweep to map network
 
 # Security helper interactive script
-alias cyberhelp="bash cyber_helper.sh"
+alias cyberhelp="cyber_helper.sh"
 
 # Wallpaper selector
-alias fondo="bash /home/joseph/.local/bin/wallpaper_selector.sh"
+alias fondo="wallpaper_selector.sh"
 
 # Auto-completion improvements
 autoload -Uz compinit
@@ -125,4 +125,4 @@ extract () {
 }
 
 # opencode
-export PATH=/home/joseph/.opencode/bin:$PATH
+export PATH=$HOME/.opencode/bin:$PATH

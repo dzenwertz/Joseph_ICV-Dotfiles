@@ -38,7 +38,7 @@ instalar_paquetes() {
     # Paquetes opcionales para Hyprland
     PAQUETES_HYPR=(
         hyprland waybar rofi-wayland
-        swww dunst pavucontrol
+        awww dunst pavucontrol
     )
 
     echo -e "${C_YELLOW}[?] ¿Deseas instalar también los paquetes de Hyprland? (Recomendado si quieres probarlo)${C_RESET}"
@@ -53,6 +53,14 @@ instalar_paquetes() {
     PAQUETES=("${PAQUETES_BASE[@]}")
     if [ "$SOLO_BASE" = false ]; then
         PAQUETES+=("${PAQUETES_HYPR[@]}")
+    fi
+
+    # Verificar si pacman está disponible antes de intentar instalar
+    if ! command -v pacman &> /dev/null; then
+        echo -e "${C_RED}[!] Error: pacman no está instalado. Este instalador automático requiere Arch Linux o derivado.${C_RESET}"
+        echo -e "${C_YELLOW}[!] Por favor, instala los siguientes paquetes manualmente en tu sistema:${C_RESET}"
+        echo -e "    ${PAQUETES[*]}"
+        return
     fi
 
     echo -e "${C_GREEN}[+] Paquetes a instalar:${C_RESET} ${PAQUETES[*]}"
@@ -98,6 +106,7 @@ aplicar_enlaces() {
     # Crear carpetas de configuración si no existen
     mkdir -p "$HOME/.config"
     mkdir -p "$HOME/.local/bin"
+    mkdir -p "$HOME/Pictures/Wallpapers"
 
     # Enlazar configs base
     linkear_archivo "$SCRIPT_DIR/zsh/.zshrc" "$HOME/.zshrc"
@@ -106,9 +115,19 @@ aplicar_enlaces() {
     linkear_archivo "$SCRIPT_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
     linkear_archivo "$SCRIPT_DIR/nvim" "$HOME/.config/nvim"
 
-    # Enlazar scripts útiles
-    chmod +x "$SCRIPT_DIR/bin/cyber_helper.sh"
-    linkear_archivo "$SCRIPT_DIR/bin/cyber_helper.sh" "$HOME/.local/bin/cyber_helper.sh"
+    # Enlazar todos los scripts útiles en bin/
+    echo -e "${C_BLUE}[*] Enlazando scripts útiles de bin/...${C_RESET}"
+    for script in "$SCRIPT_DIR/bin"/*; do
+        if [ -f "$script" ]; then
+            chmod +x "$script"
+            linkear_archivo "$script" "$HOME/.local/bin/$(basename "$script")"
+        fi
+    done
+
+    # Enlazar el fondo de pantalla por defecto
+    if [ -f "$SCRIPT_DIR/wallpapers/catppuccin_lofi.png" ]; then
+        linkear_archivo "$SCRIPT_DIR/wallpapers/catppuccin_lofi.png" "$HOME/Pictures/Wallpapers/catppuccin_lofi.png"
+    fi
 
     # Enlazar configs de Hyprland si el usuario las quiere
     echo -e "\n${C_YELLOW}[?] ¿Deseas aplicar la configuración de Hyprland, Waybar y Rofi?${C_RESET}"

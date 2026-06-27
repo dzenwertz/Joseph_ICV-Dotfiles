@@ -15,7 +15,7 @@ choice=$( (echo "🎲 Aleatorio"; ls "$WALLPAPER_DIR" | grep -E '\.(jpg|jpeg|png
 
 if [ -n "$choice" ]; then
     if [ "$choice" = "🎲 Aleatorio" ]; then
-        /home/joseph/.local/bin/random_wallpaper.sh
+        ~/.local/bin/random_wallpaper.sh
     else
         awww img "$WALLPAPER_DIR/$choice" --transition-type outer --transition-pos 0.85,0.97 --transition-step 90
     fi
