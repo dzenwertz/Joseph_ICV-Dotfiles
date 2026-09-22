@@ -125,6 +125,6 @@
     "custom/power": {
         "format": "⏻",
         "tooltip": false,
-        "on-click": "wlogout || hyprctl dispatch exit"
+        "on-click": "~/.config/hypr/scripts/power_menu.sh"
     }
 }
