@@ -1,0 +1,4 @@
+*.bak*
+*.disabled
+.DS_Store
+*.log

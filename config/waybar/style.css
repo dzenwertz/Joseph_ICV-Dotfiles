@@ -1,0 +1,154 @@
+/* Waybar Sleek Dark Minimalist Style */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #e2e4ea;
+}
+
+/* Master styling for pills */
+#workspaces,
+#window,
+#clock,
+.hardware,
+#hardware,
+.system,
+#system,
+#custom-power {
+    background-color: rgba(10, 11, 15, 0.90);
+    padding: 2px 10px;
+    margin: 3px 2px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+}
+
+.hardware:hover,
+#hardware:hover,
+.system:hover,
+#system:hover,
+#clock:hover,
+#workspaces:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+    background-color: rgba(14, 15, 20, 0.95);
+}
+
+/* Workspaces */
+#workspaces {
+    padding: 0 3px;
+}
+
+#workspaces button {
+    padding: 2px 6px;
+    color: #5d637c;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #e2e4ea;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.15);
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background-color: #f7768e;
+    color: #1a1b26;
+}
+
+/* Window title */
+#window {
+    color: #8c95b3;
+    font-weight: 500;
+    padding: 2px 12px;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Clock */
+#clock {
+    color: #f0f2f8;
+    font-weight: 700;
+    padding: 2px 14px;
+    letter-spacing: 0.5px;
+}
+
+/* Hardware & System sub-modules */
+#cpu,
+#memory,
+#pulseaudio,
+#network,
+#battery {
+    background-color: transparent;
+    padding: 2px 6px;
+    margin: 0;
+    color: #d5d8e2;
+    border: none;
+}
+
+#cpu:hover,
+#memory:hover,
+#pulseaudio:hover,
+#network:hover,
+#battery:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+}
+
+/* Subtle separator dividers */
+#memory,
+#network,
+#battery {
+    border-left: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Battery states */
+#battery.warning:not(.charging) {
+    color: #ff9e64;
+}
+
+#battery.critical:not(.charging) {
+    color: #f7768e;
+    animation-name: blink;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(247, 118, 142, 0.3);
+        color: #f7768e;
+    }
+}
+
+/* Power button */
+#custom-power {
+    color: #f7768e;
+    padding: 2px 9px;
+}
+
+#custom-power:hover {
+    background-color: #f7768e;
+    color: #0f1015;
+    box-shadow: 0 0 10px rgba(247, 118, 142, 0.6);
+}

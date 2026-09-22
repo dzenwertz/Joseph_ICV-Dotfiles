@@ -1,0 +1,67 @@
+/* Wofi Minimalist Floating Theme */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+    border: none;
+    outline: none;
+}
+
+window {
+    margin: 0px;
+    background-color: rgba(24, 24, 37, 0.92);
+    border: 1px solid rgba(205, 214, 244, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+#outer-box {
+    margin: 14px;
+}
+
+#input {
+    margin: 6px 6px 14px 6px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(137, 180, 250, 0.35);
+    color: #cdd6f4;
+    background-color: rgba(30, 30, 46, 0.85);
+    font-size: 14px;
+}
+
+#input:focus {
+    border: 1px solid #89b4fa;
+}
+
+#inner-box {
+    margin: 4px;
+    background-color: transparent;
+}
+
+#entry {
+    padding: 8px 12px;
+    margin: 2px 0px;
+    border-radius: 10px;
+    color: #cdd6f4;
+    background-color: transparent;
+    transition: all 0.15s ease-in-out;
+}
+
+#entry:selected {
+    background: linear-gradient(135deg, rgba(137, 180, 250, 0.25), rgba(203, 166, 247, 0.25));
+    border: 1px solid rgba(137, 180, 250, 0.4);
+    color: #ffffff;
+}
+
+#text {
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#image {
+    margin-left: 4px;
+}
+
+#scroll {
+    margin: 4px 0px;
+}
