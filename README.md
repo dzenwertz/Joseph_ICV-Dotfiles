@@ -17,7 +17,11 @@
 Key highlights include an obsidian pill Waybar, extended audio output (up to 150%), dual wallpaper engine (silent static images via `swaybg` and seamless animated video loops via `mpvpaper`), automatic internal disk mounting without password prompts, and Fastfetch with Kitty Graphics Protocol.
 
 <p align="center">
-  <img src="assets/preview.jpg" alt="RETH Dotfiles preview" width="100%">
+  <img src="assets/preview.jpg" alt="RETH Dotfiles — Terminal & Fastfetch" width="100%">
+</p>
+
+<p align="center">
+  <img src="assets/preview-clean.jpg" alt="RETH Dotfiles — Clean Desktop & Obsidian Waybar" width="100%">
 </p>
 
 ---
